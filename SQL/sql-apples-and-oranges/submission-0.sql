@@ -1,0 +1,9 @@
+-- Write your query below
+select sale_date, SUM(
+    CASE
+        WHEN fruit = 'apples' THEN sold_num
+        ELSE -sold_num
+    END
+) as diff
+FROM sales
+GROUP BY sale_date
